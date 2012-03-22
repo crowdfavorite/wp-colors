@@ -8,23 +8,13 @@ Author: Crowd Favorite
 Author URI: http://crowdfavorite.com
 */
 
-
-/* TODO
-
-- abstract API endpoint
-- default to direct Kuler call
-- allow filtering on API call
-- On selected color, if it's been customized it will "Custom Theme by..." wordpress username
-
-*/
-
 // get your API key: http://learn.adobe.com/wiki/display/kulerdev/A.+Kuler+API+Documentation
  
 define('CF_KULER_API_KEY', '');
 define('CF_KULER_ITEMS_PER_PAGE', 8);
 define('CF_KULER_COLORS', 'cf_kuler_colors');
 
-if (!empty(CF_KULER_API_KEY) && !function_exists('cf_kuler_admin_init')) { // loaded and API key check
+if (strlen(CF_KULER_API_KEY) && !function_exists('cf_kuler_admin_init')) { // loaded and API key check
 
 define('CF_KULER_VERSION', '1.0');
 
@@ -208,7 +198,7 @@ function cf_kuler_api_search($searchQuery, $startIndex = 0, $itemsPerPage = 20) 
 }
 
 function cf_kuler_api_request($url) {
-	$url .= '&=key'.CF_KULER_API_KEY;
+	$url .= '&key='.CF_KULER_API_KEY;
 	$url = apply_filters('cf_kuler_api_request', $url);
 	require(ABSPATH.WPINC.'/class-simplepie.php');
 	$feed = new SimplePie();
@@ -389,7 +379,7 @@ add_action('wp_ajax_cf_kuler', 'cf_kuler_admin_ajax');
  *
  * @return void
  */
-function cf_kuler_admin_preview_css() {
+function cf_kuler_admin_preview_css_ajax() {
 	add_filter('cf-kuler-colors', 'cf_kuler_colors_ajax_filter');
 	$css = cf_kuler_admin_preview_css(); // PHP 5.2
 	$response = array(
@@ -400,7 +390,7 @@ function cf_kuler_admin_preview_css() {
 	echo json_encode($response);
 	exit;
 }
-add_action('wp_ajax_cf_kuler_preview_css', 'cf_kuler_admin_preview_css');
+add_action('wp_ajax_cf_kuler_preview_css', 'cf_kuler_admin_preview_css_ajax');
 
 /**
  * Filter in new colors passed in via ajax
