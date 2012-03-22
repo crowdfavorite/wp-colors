@@ -1,0 +1,396 @@
+/* --------------------------------------------------
+ * Theme Color Settings Plugin Styles
+ -------------------------------------------------- */
+
+/* section and section-title */
+.cfcp-section {
+	margin: 0 0 30px 0;
+}
+.cfcp-section-title {
+	background: url('../img/line-medium.gif') left center repeat-x;
+	margin: 15px 0;
+}
+.cfcp-section-title span {
+	background-color: #f9f9f9;
+	margin: 0 10px;
+	padding: 0 5px;
+}
+
+/** Tab Navigation
+ -------------------------------------------------- */
+.cf-nav {
+	border-bottom: 1px solid #ccc;
+	float: left;
+	margin-bottom: 20px;
+	width: 100%;
+}
+.cf-nav form {
+	float: right;
+}
+.cf-nav ul {
+	list-style-type: none;
+	margin: 0 10px;
+	padding: 0em;
+}
+.cf-nav ul li,
+.cf-nav ul li a {
+	float: left;
+	margin: 0;
+}
+.cf-nav ul li a {
+	display: block;
+	color: #999;
+	background-color: #f1f1f1;
+	background-image: -moz-linear-gradient(-90deg, #f9f9f9 , #ececec );
+	background-image: -webkit-gradient(linear,left top,left bottom,from(#f9f9f9),to(#ececec));
+	background-image: linear-gradient(top,#f9f9f9,#ececec);
+	border: 1px solid #ddd;
+	border-bottom: 0;
+	font-size: 15px;
+	font-family: Georgia,"Times New Roman","Bitstream Charter",Times,serif;
+	height: 29px;
+	line-height: 29px;
+	margin-right: 5px;
+	padding: 0 10px;
+	text-decoration: none;
+	text-shadow: #fff 0 1px 1px;
+	-moz-border-radius-topleft: 3px;
+	-webkit-border-top-left-radius: 3px;
+	border-top-left-radius: 3px;
+	-moz-border-radius-topright: 3px;
+	-webkit-border-top-right-radius: 3px;
+	border-top-right-radius: 3px;
+}
+.cf-nav ul li a:hover {
+	color: #666;
+}
+.cf-nav ul li a.current {
+	background: none;
+	border: 1px solid #ccc;
+	border-bottom: 1px solid #fff;
+	color: #464646;
+	margin-bottom: -1px;
+}
+
+
+/** Color settings page
+ -------------------------------------------------- */
+/* set width for colors page */
+.cf-kuler-wrap {
+	width: 802px;
+}
+/* search results */
+.cf-kuler-theme {
+	float: left;
+	padding: 0 0 18px 0;
+	width: 100%;
+}
+.cf-kuler-theme ul,
+.cf-kuler-theme ul li {
+	float: left;
+	height: 90px;
+	margin: 0;
+	padding: 0;
+}
+.cf-kuler-theme ul {
+	border: 1px solid #c7c7c7;
+}
+.cf-kuler-theme ul li {
+	width: 110px;
+}
+.cf-kuler-theme-description {
+	margin: 3px 0 0 0;
+}
+.cf-kuler-theme-description a {
+	font-weight: bold;	
+	text-decoration: none;
+}
+.cf-kuler-theme-description em {
+	font-size: .9em;
+	font-family: Georgia, "Times New Roman", Times, serif;
+}
+.cf-kuler-theme-edit-swatch {
+	display: none;
+}
+#cf-kuler-swatch-selected .cf-kuler-theme .cf-kuler-theme-edit-swatch {
+	background: url(../img/color-edit.png) 0 0 no-repeat;
+	display: block;
+	height: 140px;
+	overflow: hidden;
+	text-indent: -9999px;
+	width: 160px;
+}
+#cf-kuler-swatch-selected .cf-kuler-theme ul li:hover .cf-kuler-theme-edit-swatch {
+	background-position: 0 -140px;
+}
+#cf-kuler-swatch-selected #cf-kuler-color-picker .cf-kuler-theme-edit-swatch {
+	display: none;
+}
+
+/* apply and preview from search results */
+#cf-kuler-swatch-selector {
+	clear: both;
+	margin-bottom: 80px;
+}
+#cf-kuler-swatch-selector p.none {
+	color: #999;
+	font-style: italic;
+	font-size: 15px;
+	padding: 75px 0;
+	text-align: center;
+}
+#cf-kuler-swatch-selector .cf-kuler-theme-actions {
+	background-color: #888;
+	display: none;
+	float: left;
+	height: 82px;
+	padding: 5px 0;
+	text-align: center;
+	width: 110px;
+	-moz-border-radius-topright: 5px;
+	-webkit-border-top-right-radius: 5px;
+	border-top-right-radius: 5px;
+	-moz-border-radius-bottomright: 5px; 
+	-webkit-border-bottom-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+#cf-kuler-swatch-selector .cf-kuler-theme-actions p {
+	margin: 12px 0;
+}
+#cf-kuler-swatch-selector .cf-kuler-theme-actions a.button {
+	border: 1px solid #666;
+	display: inline-block;
+	margin: 0;
+	width: 46px;
+}
+#cf-kuler-swatch-selector .cf-kuler-theme:hover ul {
+	border: 1px solid #888;
+}
+#cf-kuler-swatch-selector .cf-kuler-theme:hover .cf-kuler-theme-actions,
+#cf-kuler-swatch-selector .cf-kuler-theme.hover .cf-kuler-theme-actions {
+	display: block;
+}
+#cf-kuler-swatch-selector .cf-kuler-theme ul li:hover {
+	cursor: pointer;
+}
+
+/* Selected Color Theme */
+#cf-kuler-swatch-selected {
+	width: 802px;
+}
+#cf-kuler-swatch-selected .cf-kuler-theme {
+	float: left;
+	padding: 0;
+}
+#cf-kuler-swatch-selected .cf-kuler-theme ul,
+#cf-kuler-swatch-selected .cf-kuler-theme ul li,
+.cf-kuler-theme-swatch-placeholder {
+	height: 140px;
+}
+#cf-kuler-swatch-selected .cf-kuler-theme ul {
+	width: 800px;
+	margin-bottom: 10px;
+}
+#cf-kuler-swatch-selected .cf-kuler-theme ul li,
+.cf-kuler-theme-swatch-placeholder {
+	width: 160px;
+}
+#cf-kuler-swatch-selected .cf-kuler-theme p {
+	margin: 0;
+}
+.cf-kuler-theme-swatch-placeholder {
+	background-color: #E0E0E0;
+	-moz-box-shadow: inset 2px 2px 8px #333; /* FF3.5+ */
+	-webkit-box-shadow: inset 2px 2px 8px #333; /* Saf3+, Chrome */
+	box-shadow: inset 2px 2px 8px #333; /* Standard. Opera 10.5, IE9 */
+}
+
+/* pagination */
+.cf-kuler-pagination {
+	border-top: 1px solid #ccc;
+	margin-top: 1em;
+	min-height: 18px;
+	padding: 5px 0;
+	width: 550px;
+}
+.cf-kuler-paging.next {
+	float: right;
+}
+.kuler-credit {
+	margin-top: 1em;
+	float: right;
+}
+
+
+/** Color Preview
+ * colors set in cf-kuler.php
+ -------------------------------------------------- */
+#cf-kuler-preview.cfp-popover {
+	width: 372px;
+}
+#cf-kuler-preview .cfp-popover-notch {
+	background-position: 0px -20px;
+	height: 14px;
+	right: 0;
+	top: 191px;
+	width: 8px;
+}
+#cf-kuler-preview .cfp-popover-content {
+	padding: 5px;
+}
+.cf-kuler-preview-page {
+	background: url('../img/color-preview.png') 0 0 no-repeat;
+	height: 380px;
+	width: 360px;
+	position: relative;
+}
+.cf-kuler-preview-header {
+	height: 30px;
+}
+.cf-kuler-preview-logo {
+	height: 10px;
+	left: 22px;
+	position: absolute;
+	top: 15px;
+	width: 100px;
+}
+.cf-kuler-preview-link {
+	position: absolute;
+	right: 22px;
+	top: 8px;
+}
+.cf-kuler-preview-link li {
+	float: left;
+	height: 5px;
+	margin: 0 0 0 8px;
+	width: 20px;
+}
+.cf-kuler-preview-masthead {
+	height: 80px;
+	padding: 0 18px;
+}
+.cf-kuler-preview-featured {
+	float: left;
+	height: 58px;
+	width: 100px;
+	margin: 11px 4px;
+}
+.cf-kuler-preview-sidebar {
+	margin-left: 238px;
+	padding: 11px 0;
+	width: 100px;
+}
+.cf-kuler-preview-bio {
+	height: 58px;
+	margin-bottom: 10px;
+}
+.cf-kuler-preview-widget {
+	height: 12px;
+	margin-bottom: 52px;
+}
+.cf-kuler-preview-footer {
+	bottom: 0;
+	height: 30px;
+	left: 0;
+	position: absolute;
+	width: 360px;
+}
+
+/** Color Picker
+ -------------------------------------------------- */
+#cf-kuler-color-picker .colorpicker {
+	background-image: url(../js/colorpicker/images/custom_background.png);
+	position: relative;
+	bottom: 0;
+	left: 0;
+}
+#cf-kuler-color-picker .colorpicker_hue div {
+	background-image: url(../js/colorpicker/images/custom_indic.gif);
+}
+#cf-kuler-color-picker .colorpicker_hex {
+	background-image: url(../js/colorpicker/images/custom_hex.png);
+}
+#cf-kuler-color-picker .colorpicker_rgb_r {
+	background-image: url(../js/colorpicker/images/custom_rgb_r.png);
+}
+#cf-kuler-color-picker .colorpicker_rgb_g {
+	background-image: url(../js/colorpicker/images/custom_rgb_g.png);
+}
+#cf-kuler-color-picker .colorpicker_rgb_b {
+	background-image: url(../js/colorpicker/images/custom_rgb_b.png);
+}
+#cf-kuler-color-picker .colorpicker_hsb_s {
+	background-image: url(../js/colorpicker/images/custom_hsb_s.png);
+	display: none;
+}
+#cf-kuler-color-picker .colorpicker_hsb_h {
+	background-image: url(../js/colorpicker/images/custom_hsb_h.png);
+	display: none;
+}
+#cf-kuler-color-picker .colorpicker_hsb_b {
+	background-image: url(../js/colorpicker/images/custom_hsb_b.png);
+	display: none;
+}
+#cf-kuler-color-picker .colorpicker_submit {
+	background-image: url(../js/colorpicker/images/custom_submit.png);
+}
+#cf-kuler-color-picker .colorpicker input {
+	background-color: transparent;
+	border: none;
+	color: #778398;
+	font-weight: bold;
+	font-size: 10px;
+	line-height: 14px;
+	margin-top: 1px;
+	padding: 0 0 0 4px;
+	outline: none;
+	text-align: center;
+}
+#cf-kuler-color-picker .theme-swatches .cf-kuler-theme {
+	float: none;
+	height: 31px;
+}
+#cf-kuler-color-picker .theme-swatches .cf-kuler-theme ul {
+	height: 36px;
+}
+#cf-kuler-color-picker .theme-swatches .cf-kuler-theme li {
+	width: 68px;
+	height: 36px;
+}
+#cf-kuler-color-picker .theme-swatches .cf-kuler-theme li:first-child, 
+#cf-kuler-color-picker .theme-swatches .cf-kuler-theme li:last-child {
+	width: 70px;
+}
+#cf-kuler-color-picker .theme-swatches .cf-kuler-theme p {
+	display: none;
+}
+
+/** Utilities
+ -------------------------------------------------- */
+#cf_kuler_settings_form p {
+	text-align: right;
+}
+/* Clearing */
+.cf-clearfix {
+	display: block;
+}
+.cf-clearfix:after {
+	content: ".";
+	display: block;
+	height: 0;
+	clear: both;
+	visibility: hidden;
+}
+/* Loading gif */
+.cfcp-loading {
+	background: url('../img/ajax-loader.gif') center center no-repeat;
+	min-height: 32px;
+	min-width: 32px;
+}
+.cfcp-loading em {
+	display: none;
+}
+/* taller for loading kuler color  */
+#cf-kuler-swatch-selector .cfcp-loading {
+	height: 250px;
+}
