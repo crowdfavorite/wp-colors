@@ -8,6 +8,21 @@ Author: Crowd Favorite
 Author URI: http://crowdfavorite.com
 */
 
+/**
+ * Copyright (c) 2010-2012 Crowd Favorite, Ltd. All rights reserved.
+ * http://crowdfavorite.com
+ *
+ * Released under GPL v2
+ * http://opensource.org/licenses/GPL-2.0
+ *
+ * **********************************************************************
+ * This program is distributed in the hope that it will be useful, but
+ * WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. 
+ * **********************************************************************
+ */
+
+
 // get your API key: http://learn.adobe.com/wiki/display/kulerdev/A.+Kuler+API+Documentation
  
 @define('CF_KULER_API_KEY', '');
