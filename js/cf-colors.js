@@ -36,6 +36,7 @@ jQuery(function($) {
 	});
 	
 	$('#cf-kuler-search-form').submit(function(e) {
+		$('#cf-kuler-menu a').removeClass('current');
 		$swatches = $('#cf-kuler-swatch-selector');
 		$swatches.html('<div class="cfcp-loading"><em>' + cf_kuler_settings.loading + '</em></div>');
 		var key = 'search' + $(this).find('#cf_kuler_search').val()
