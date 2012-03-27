@@ -1,0 +1,13 @@
+# CF Colors
+
+
+## Version 1.0.1
+
+- added CHANGELOG
+- no tab selected when showing search results
+- allow pre-overriding of defined variables
+
+
+## Version 1.0
+
+- first public release

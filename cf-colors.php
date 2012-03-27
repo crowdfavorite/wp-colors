@@ -3,20 +3,35 @@
 /*
 Plugin Name: CF Colors
 Description: Selection of color swatches from Adobe Kuler.
-Version: 1.0
+Version: 1.0.1
 Author: Crowd Favorite
 Author URI: http://crowdfavorite.com
 */
 
+/**
+ * Copyright (c) 2010-2012 Crowd Favorite, Ltd. All rights reserved.
+ * http://crowdfavorite.com
+ *
+ * Released under GPL v2
+ * http://opensource.org/licenses/GPL-2.0
+ *
+ * **********************************************************************
+ * This program is distributed in the hope that it will be useful, but
+ * WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. 
+ * **********************************************************************
+ */
+
+
 // get your API key: http://learn.adobe.com/wiki/display/kulerdev/A.+Kuler+API+Documentation
  
-define('CF_KULER_API_KEY', '');
-define('CF_KULER_ITEMS_PER_PAGE', 8);
-define('CF_KULER_COLORS', 'cf_kuler_colors');
+@define('CF_KULER_API_KEY', '');
+@define('CF_KULER_ITEMS_PER_PAGE', 8);
+@define('CF_KULER_COLORS', 'cf_kuler_colors');
 
 if (strlen(CF_KULER_API_KEY) && !function_exists('cf_kuler_admin_init')) { // loaded and API key check
 
-define('CF_KULER_VERSION', '1.0');
+@define('CF_KULER_VERSION', '1.0.1');
 
 function cf_kuler_admin_init() {
 	if (!empty($_GET['page']) && $_GET['page'] == basename(__FILE__)) {
