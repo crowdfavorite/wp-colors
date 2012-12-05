@@ -3,7 +3,7 @@
 /*
 Plugin Name: CF Colors
 Description: Selection of color swatches from Adobe Kuler.
-Version: 1.0.1
+Version: 1.0.2
 Author: Crowd Favorite
 Author URI: http://crowdfavorite.com
 */

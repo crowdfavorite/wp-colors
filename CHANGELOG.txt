@@ -1,5 +1,9 @@
 # CF Colors
 
+## Version 1.0.2
+
+- Kuler API compatibility change (use https)
+- additional check to make sure SimplePie exists before invoking
 
 ## Version 1.0.1
 
