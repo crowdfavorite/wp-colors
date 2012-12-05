@@ -201,13 +201,13 @@ function cf_kuler_get_settings() {
 }
 
 function cf_kuler_api_get($listType = 'rating', $startIndex = 0, $itemsPerPage = 20) {
-	$url = 'http://kuler-api.adobe.com/rss/get.cfm';
+	$url = 'https://kuler-api.adobe.com/rss/get.cfm';
 	$params = compact('listType', 'startIndex', 'itemsPerPage');
 	return cf_kuler_api_request($url.'?'.http_build_query($params, null, '&'));
 }
 
 function cf_kuler_api_search($searchQuery, $startIndex = 0, $itemsPerPage = 20) {
-	$url = 'http://kuler-api.adobe.com/rss/search.cfm';
+	$url = 'https://kuler-api.adobe.com/rss/search.cfm';
 	$params = compact('searchQuery', 'startIndex', 'itemsPerPage');
 	return cf_kuler_api_request($url.'?'.http_build_query($params, null, '&'));
 }
@@ -215,7 +215,9 @@ function cf_kuler_api_search($searchQuery, $startIndex = 0, $itemsPerPage = 20) 
 function cf_kuler_api_request($url) {
 	$url .= '&key='.CF_KULER_API_KEY;
 	$url = apply_filters('cf_kuler_api_request', $url);
-	require(ABSPATH.WPINC.'/class-simplepie.php');
+	if (!class_exists('SimplePie')) {
+		require(ABSPATH.WPINC.'/class-simplepie.php');
+	}
 	$feed = new SimplePie();
 	$feed->enable_cache(false);
 	$feed->set_feed_url($url);
@@ -614,22 +616,22 @@ function cf_kuler_settings_form() {
 rss/get.cfm?listType=[listType]&startIndex=[startIndex]&itemsPerPage=[itemsPerPage]&timeSpan=[timeSpan]&key=[key]
 
 Get highest-rated feeds
-http://kuler-api.adobe.com/rss/get.cfm?listtype=rating
+https://kuler-api.adobe.com/rss/get.cfm?listtype=rating
 
 Get most popular feeds for the last 30 days
-http://kuler-api.adobe.com/rss/get.cfm?listtype=popular&timespan=30
+https://kuler-api.adobe.com/rss/get.cfm?listtype=popular&timespan=30
 
 Get most recent feeds
-http://kuler-api.adobe.com/rss/get.cfm?listtype=recent
+https://kuler-api.adobe.com/rss/get.cfm?listtype=recent
 
 
 rss/search.cfm?searchQuery=[searchQuery]&startIndex=[startIndex]&itemsPerPage=[itemsPerPage]&key=[key]
 
 Search for themes with the word "blue" in the name, tags, user name, etc.
-http://kuler-api.adobe.com/rss/search.cfm?searchQuery=blue
+https://kuler-api.adobe.com/rss/search.cfm?searchQuery=blue
 
 Search for themes tagged as "sunset"
-http://kuler-api.adobe.com/rss/search.cfm?searchQuery=tag:sunset
+https://kuler-api.adobe.com/rss/search.cfm?searchQuery=tag:sunset
 
 */
 
