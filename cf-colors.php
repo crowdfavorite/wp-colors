@@ -31,7 +31,7 @@ Author URI: http://crowdfavorite.com
 
 if (strlen(CF_KULER_API_KEY) && !function_exists('cf_kuler_admin_init')) { // loaded and API key check
 
-@define('CF_KULER_VERSION', '1.0.1');
+@define('CF_KULER_VERSION', '1.0.2');
 
 function cf_kuler_admin_init() {
 	if (!empty($_GET['page']) && $_GET['page'] == basename(__FILE__)) {
