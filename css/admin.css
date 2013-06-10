@@ -11,7 +11,7 @@
 	margin: 15px 0;
 }
 .cfcp-section-title span {
-	background-color: #f9f9f9;
+	background-color: #fff;
 	margin: 0 10px;
 	padding: 0 5px;
 }
@@ -64,12 +64,16 @@
 .cf-nav ul li a:hover {
 	color: #666;
 }
+.cf-nav ul li a:active {
+	outline: none;
+}
 .cf-nav ul li a.current {
 	background: none;
 	border: 1px solid #ccc;
 	border-bottom: 1px solid #fff;
 	color: #464646;
 	margin-bottom: -1px;
+	outline: none;
 }
 
 
@@ -367,7 +371,7 @@
 
 /** Utilities
  -------------------------------------------------- */
-#cf_kuler_settings_form p {
+#cf_colors_settings_form p {
 	text-align: right;
 }
 /* Clearing */
