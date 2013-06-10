@@ -8,7 +8,7 @@ jQuery(function($) {
 		$('#cf-kuler-menu a').removeClass('current');
 		$(this).addClass('current');
 		$swatches = $('#cf-kuler-swatch-selector');
-		$swatches.html('<div class="cfcp-loading"><em>' + cf_kuler_settings.loading + '</em></div>');
+		$swatches.html('<div class="cfcp-loading"><em>' + cf_colors_settings.loading + '</em></div>');
 		var key = $(this).attr('data-request') + $(this).attr('data-listtype')
 			+ $(this).attr('data-start') + $(this).attr('data-items');
 		CF.kuler.currentRequest = key;
@@ -38,7 +38,7 @@ jQuery(function($) {
 	$('#cf-kuler-search-form').submit(function(e) {
 		$('#cf-kuler-menu a').removeClass('current');
 		$swatches = $('#cf-kuler-swatch-selector');
-		$swatches.html('<div class="cfcp-loading"><em>' + cf_kuler_settings.loading + '</em></div>');
+		$swatches.html('<div class="cfcp-loading"><em>' + cf_colors_settings.loading + '</em></div>');
 		var key = 'search' + $(this).find('#cf_kuler_search').val()
 			+ $(this).attr('data-start') + $(this).attr('data-items');
 		CF.kuler.currentRequest = key;
@@ -47,7 +47,7 @@ jQuery(function($) {
 			{
 				'action': 'cf_kuler',
 				'request': 'search',
-				'searchQuery': $(this).find('#cf_kuler_search').val(),
+				'searchQuery': $(this).find('#cf_colors_search').val(),
 				'startIndex': $(this).attr('data-start'),
 				'itemsPerPage': $(this).attr('data-items')
 			},
@@ -63,7 +63,7 @@ jQuery(function($) {
 	});
 	$('a.cf-kuler-paging').live('click', function(e) {
 		$swatches = $('#cf-kuler-swatch-selector');
-		$swatches.html('<div class="cfcp-loading"><em>' + cf_kuler_settings.loading + '</em></div>');
+		$swatches.html('<div class="cfcp-loading"><em>' + cf_colors_settings.loading + '</em></div>');
 		var key = $(this).attr('data-request') + $(this).attr('data-listtype') + $(this).attr('data-search')
 			+ $(this).attr('data-start') +  $(this).attr('data-items');
 		CF.kuler.currentRequest = key;
@@ -86,7 +86,6 @@ jQuery(function($) {
 			},
 			'html'
 		);
-		e.preventDefault();
 	});
 	
 	$('#cf-kuler-swatch-selector .cf-kuler-theme .cf-kuler-apply').live('click', function(e) {
@@ -94,13 +93,15 @@ jQuery(function($) {
 		var $selected = $('#cf-kuler-swatch-selected');
 		$selected.find('.cf-kuler-theme').html('');
 		var $theme = $(this).closest('.cf-kuler-theme');
-		$selected.find('.cf-kuler-theme').append($theme.find('ul').clone()).append($theme.find('p.cf-kuler-theme-description').clone());
+		$selected.find('.cf-kuler-theme')
+			.append($theme.find('ul').clone())
+			.append($theme.find('p.cf-kuler-theme-description').clone());
 
 // populate hidden field
 // show save button
-		$('#cf_kuler_settings_form')
+		$('#cf_colors_settings_form')
 			.find('#cf-kuler-theme-info').html($theme.find('.cf-kuler-theme-data').clone()).end()
-			.find('#cf_kuler_colors').val($theme.attr('data-swatches')).end()
+			.find('#cf_colors_colors').val($theme.attr('data-swatches')).end()
 			.find('input[type=submit]').show().end();
 		$('html, body').animate({scrollTop:0}, 'slow'); // scroll to top
 
@@ -108,9 +109,9 @@ jQuery(function($) {
 		e.preventDefault();
 	});
 	
-	$('#cf_kuler_settings_form').live('submit', function() {
+	$('#cf_colors_settings_form').live('submit', function() {
 		// pull selected theme's swatch state
-		$(this).find('#cf_kuler_colors').val(CF.kuler.utils.getThemeColors($('#cf-kuler-swatch-selected .cf-kuler-theme')));
+		$(this).find('#cf_colors_colors').val(CF.kuler.utils.getThemeColors($('#cf-kuler-swatch-selected .cf-kuler-theme')));
 	});
 	
 // Utils
@@ -193,7 +194,7 @@ jQuery(function($) {
 	CF.kuler.preview = function($) {
 		var colors,
 			$preview = $('#cf-kuler-preview'),
-			cssTemplate = cf_kuler_settings.preview_css_template;
+			cssTemplate = cf_colors_settings.preview_css_template;
 			
 		return {
 			selected: null,
@@ -303,7 +304,7 @@ jQuery(function($) {
 			showPicker: function(clicked) {				
 				// make sure that the picker is the first item in the popup
 				if (false === $picker.find('.cfp-popover-inner :eq(2)').hasClass('colorpicker')) {
-					$('.colorpicker', $picker).insertAfter($('.cfp-popover-inner :first', $picker));
+					$('.colorpicker', $picker).insertAfter($('.cfp-popover-inner .cfp-popover-content:first', $picker));
 				}
 				
 				// make sure our original swatches are set
@@ -330,7 +331,7 @@ jQuery(function($) {
 			},
 
 			setOriginalSwatches: function() {
-				var colors = $('form#cf_kuler_settings_form .cf-kuler-theme-data[name="cf_kuler_theme[swatches]"]').val().split(',');
+				var colors = $('form#cf_colors_settings_form .cf-kuler-theme-data[name="cf_colors_theme[swatches]"]').val().split(',');
 				$('.theme-swatches-container ul li', $picker).each(function(i) {
 					$(this).css('backgroundColor', colors[i]).unbind().click(function() {
 						var color = $(this).css('backgroundColor');
