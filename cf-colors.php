@@ -562,8 +562,8 @@ function cf_colors_settings_form() {
 				<input type="submit" class="button" name="" value="'.__('Search Colors', 'cf-colors').'" />
 			</form>
 			<ul id="cf-kuler-menu">
-				<li><a href="#" data-request="get" data-listtype="recent" data-start="0" data-items="'.CF_COLORS_ITEMS_PER_PAGE.'">'.__('New', 'cf-colors').'</a></li>
 				<li><a href="#" data-request="get" data-listtype="popular" data-start="0" data-items="'.CF_COLORS_ITEMS_PER_PAGE.'">'.__('Popular', 'cf-colors').'</a></li>
+				<li><a href="#" data-request="get" data-listtype="recent" data-start="0" data-items="'.CF_COLORS_ITEMS_PER_PAGE.'">'.__('New', 'cf-colors').'</a></li>
 				<li><a href="#" data-request="get" data-listtype="random" data-start="0" data-items="'.CF_COLORS_ITEMS_PER_PAGE.'">'.__('Random', 'cf-colors').'</a></li>
 			</ul>
 		</div>
