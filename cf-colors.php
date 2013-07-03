@@ -3,13 +3,13 @@
 /*
 Plugin Name: CF Colors
 Description: Selection of color swatches from ColourLovers.
-Version: 2.0
+Version: 2.0.1
 Author: Crowd Favorite
 Author URI: http://crowdfavorite.com
 */
 
 /**
- * Copyright (c) 2010-2012 Crowd Favorite, Ltd. All rights reserved.
+ * Copyright (c) 2010-2013 Crowd Favorite, Ltd. All rights reserved.
  * http://crowdfavorite.com
  *
  * Released under GPL v2
@@ -23,14 +23,12 @@ Author URI: http://crowdfavorite.com
  */
 
 
-// get your API key: http://learn.adobe.com/wiki/display/kulerdev/A.+Kuler+API+Documentation
- 
 @define('CF_COLORS_ITEMS_PER_PAGE', 8);
 @define('CF_COLORS', 'cf_colors');
 
 if (!function_exists('cf_colors_admin_init')) { // loaded and API key check
 
-@define('CF_COLORS_VERSION', '2.0');
+@define('CF_COLORS_VERSION', '2.0.1');
 
 function cf_colors_admin_init() {
 	if (!empty($_GET['page']) && $_GET['page'] == basename(__FILE__)) {

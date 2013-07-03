@@ -1,5 +1,13 @@
 # CF Colors
 
+## Version 2.0.1
+
+- Proper changelog, etc.
+
+## Version 2.0
+
+- convert to ColourLovers instead of Adobe Kuler
+
 ## Version 1.0.2
 
 - Kuler API compatibility change (use https)
