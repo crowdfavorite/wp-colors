@@ -220,6 +220,9 @@
 .cf-kuler-paging.next {
 	float: right;
 }
+.cf-kuler-paging.center {
+	margin-left: 45%;
+}
 .kuler-credit {
 	margin-top: 1em;
 	float: right;

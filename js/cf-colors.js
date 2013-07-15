@@ -61,7 +61,8 @@ jQuery(function($) {
 		);
 		e.preventDefault();
 	});
-	$('a.cf-kuler-paging').live('click', function(e) {
+	$(document).on('click', 'a.cf-kuler-paging', function(e) {
+		e.preventDefault();
 		$swatches = $('#cf-kuler-swatch-selector');
 		$swatches.html('<div class="cfcp-loading"><em>' + cf_colors_settings.loading + '</em></div>');
 		var key = $(this).attr('data-request') + $(this).attr('data-listtype') + $(this).attr('data-search')
@@ -81,14 +82,12 @@ jQuery(function($) {
 				if (key == CF.kuler.currentRequest) {
 					CF.kuler.currentRequest = null;
 					$swatches.html(response);
-					$.scrollTo($('#preview-selected'), 'slow');
+					$('html, body').animate({scrollTop: 300}, 'slow'); // scroll to top
 				}
 			},
 			'html'
 		);
-	});
-	
-	$('#cf-kuler-swatch-selector .cf-kuler-theme .cf-kuler-apply').live('click', function(e) {
+	}).on('click', '#cf-kuler-swatch-selector .cf-kuler-theme .cf-kuler-apply', function(e) {
 // select swatch
 		var $selected = $('#cf-kuler-swatch-selected');
 		$selected.find('.cf-kuler-theme').html('');
@@ -103,13 +102,11 @@ jQuery(function($) {
 			.find('#cf-kuler-theme-info').html($theme.find('.cf-kuler-theme-data').clone()).end()
 			.find('#cf_colors_colors').val($theme.attr('data-swatches')).end()
 			.find('input[type=submit]').show().end();
-		$('html, body').animate({scrollTop:0}, 'slow'); // scroll to top
+		$('html, body').animate({scrollTop: 0}, 'slow'); // scroll to top
 
 		CF.kuler.utils.initSelectedSortable();
 		e.preventDefault();
-	});
-	
-	$('#cf_colors_settings_form').live('submit', function() {
+	}).on('submit', '#cf_colors_settings_form', function() {
 		// pull selected theme's swatch state
 		$(this).find('#cf_colors_colors').val(CF.kuler.utils.getThemeColors($('#cf-kuler-swatch-selected .cf-kuler-theme')));
 	});
@@ -362,13 +359,13 @@ jQuery(function($) {
 		onChange: function(hsb, hex, rgb) {
 			CF.kuler.picker.changePicker(hsb, hex, rgb);
 		}
-	}).live('click', function(e) {
+	});
+	$(document).on('click', '#cf-kuler-color-picker', function(e) {
 		// what happens in Vegas stays in Vegas
 		e.stopPropagation();
-	});
-
-	$('.cf-kuler-theme-edit-swatch').live('click', function(e) {
-		if (CF.kuler.picker.isVisible() && $(this).closest('li').index() == CF.kuler.picker.currentIndex()) {
+	}).on('click', '.cf-kuler-theme-edit-swatch', function(e) {
+		if (CF.kuler.picker.isVisible() && 
+			$(this).closest('li').index() == CF.kuler.picker.currentIndex()) {
 			CF.kuler.picker.hide();
 		}
 		else {
@@ -381,10 +378,8 @@ jQuery(function($) {
 		
 		e.preventDefault();
 		e.stopPropagation();
-	});
-	
-	// init preview triggers
-	$('.cf-kuler-apply-preview').live('click', function(e) {
+	}).on('click', '.cf-kuler-apply-preview', function(e) {
+		// init preview triggers
 		var $this = $(this);
 		var colors = $(this).closest('.cf-kuler-theme').attr('data-swatches').split(',');
 
@@ -396,16 +391,12 @@ jQuery(function($) {
 		
 		e.preventDefault();
 		e.stopPropagation();
-	});
-	
+	}).on('click', '#cf-kuler-swatch-selector ul li', function(e) {
 	// omg hax!
-	$('#cf-kuler-swatch-selector ul li').live('click', function(e) {
 		$(this).closest('.cf-kuler-theme').find('.cf-kuler-apply-preview').trigger('click');
 		e.preventDefault();
 		e.stopPropagation();
-	});
-
-	$('input[name="preview_button"]').live('click', function(e) {
+	}).on('click', 'input[name="preview_button"]', function(e) {
 		var $this = $(this);		
 		var colors = CF.kuler.utils.getThemeColors($('#cf-kuler-swatch-selected'));
 		
@@ -420,7 +411,7 @@ jQuery(function($) {
 	});
 	
 	// global popup neutralizer
-	$('body').live('click', function() {
+	$('body').click(function() {
 		CF.kuler.preview.hide();
 		CF.kuler.picker.hide();
 	});

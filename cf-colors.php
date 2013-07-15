@@ -381,10 +381,18 @@ function cf_colors_admin_ajax() {
 	}
 	$next_page = '<a href="#cf-colors-tabs" class="cf-kuler-paging next" data-request="'.esc_attr($api_request_type).'" data-listtype="'.esc_attr($params['listType']).'" data-search="'.esc_attr($params['searchQuery']).'" data-start="'.esc_attr($params['startIndex'] + $params['itemsPerPage']).'" data-items="'.esc_attr($params['itemsPerPage']).'">'.__('Next', 'cf-colors').' &raquo;</a>';
 	
-	$html .= '
-		<div class="cf-kuler-pagination">'
-			.$next_page.$prev_page.'
-		</div>';
+	if ($params['listType'] == 'random') {
+		$html .= '
+			<div class="cf-kuler-pagination">
+				<a href="#cf-colors-tabs" class="cf-kuler-paging center" data-request="'.esc_attr($api_request_type).'" data-listtype="'.esc_attr($params['listType']).'" data-start="0" data-items="1">'.__('Randomize', 'cf-colors').'</a>
+			</div>';
+	}
+	else {
+		$html .= '
+			<div class="cf-kuler-pagination">'
+				.$next_page.$prev_page.'
+			</div>';
+	}
 
 	header('content-type: text/html');
 	die($html);
