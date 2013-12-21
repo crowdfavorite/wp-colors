@@ -3,7 +3,7 @@
 /*
 Plugin Name: CF Colors
 Description: Selection of color swatches from ColourLovers.
-Version: 2.0.1
+Version: 2.1
 Author: Crowd Favorite
 Author URI: http://crowdfavorite.com
 */
@@ -28,7 +28,7 @@ Author URI: http://crowdfavorite.com
 
 if (!function_exists('cf_colors_admin_init')) { // loaded and API key check
 
-@define('CF_COLORS_VERSION', '2.0.1');
+@define('CF_COLORS_VERSION', '2.1');
 
 function cf_colors_admin_init() {
 	if (!empty($_GET['page']) && $_GET['page'] == basename(__FILE__)) {

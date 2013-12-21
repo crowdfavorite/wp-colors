@@ -11,7 +11,7 @@
 	margin: 15px 0;
 }
 .cfcp-section-title span {
-	background-color: #fff;
+	background-color: #f1f1f1;
 	margin: 0 10px;
 	padding: 0 5px;
 }
@@ -40,16 +40,12 @@
 .cf-nav ul li a {
 	display: block;
 	color: #999;
-	background-color: #f1f1f1;
-	background-image: -moz-linear-gradient(-90deg, #f9f9f9 , #ececec );
-	background-image: -webkit-gradient(linear,left top,left bottom,from(#f9f9f9),to(#ececec));
-	background-image: linear-gradient(top,#f9f9f9,#ececec);
+	background-color: #eee;
 	border: 1px solid #ddd;
 	border-bottom: 0;
 	font-size: 15px;
-	font-family: Georgia,"Times New Roman","Bitstream Charter",Times,serif;
-	height: 29px;
-	line-height: 29px;
+	height: 33px;
+	line-height: 33px;
 	margin-right: 5px;
 	padding: 0 10px;
 	text-decoration: none;
@@ -70,7 +66,7 @@
 .cf-nav ul li a.current {
 	background: none;
 	border: 1px solid #ccc;
-	border-bottom: 1px solid #fff;
+	border-bottom: 1px solid #f1f1f1;
 	color: #464646;
 	margin-bottom: -1px;
 	outline: none;
@@ -159,13 +155,13 @@
 	border-bottom-right-radius: 5px;
 }
 #cf-kuler-swatch-selector .cf-kuler-theme-actions p {
-	margin: 12px 0;
+	margin: 9px 0;
 }
 #cf-kuler-swatch-selector .cf-kuler-theme-actions a.button {
 	border: 1px solid #666;
 	display: inline-block;
 	margin: 0;
-	width: 64px;
+	width: 72px;
 }
 #cf-kuler-swatch-selector .cf-kuler-theme:hover ul {
 	border: 1px solid #888;

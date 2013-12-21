@@ -1,5 +1,9 @@
 # CF Colors
 
+## Version 2.1
+
+- WordPress 3.8 admin UI compatibility
+
 ## Version 2.0.1
 
 - Proper changelog, etc.
